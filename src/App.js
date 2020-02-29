@@ -26,12 +26,18 @@ class App extends Component {
 				preco: '100'
 			}
 		]
-	};
+  };
+  
+  removeAutor = (index) => {
+    this.setState({
+      autores: this.state.autores.filter((autor, posicaoAtual) => index !== posicaoAtual)
+    });
+  }
 
 	render() {
 		return (
 			<div className="App">
-				<Table autores={this.state.autores} />
+				<Table autores={this.state.autores} removeAutor={this.removeAutor}/>
 			</div>
 		);
 	}

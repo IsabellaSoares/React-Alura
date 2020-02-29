@@ -13,14 +13,14 @@ const Thead = () => {
 	);
 };
 
-const Tbody = ({ autores }) => {
+const Tbody = ({ autores, removeAutor }) => {
     const linhas = autores.map((linha, index) => {
         return (
             <tr>
                 <td>{linha.nome}</td>
                 <td>{linha.livro}</td>
                 <td>{linha.preco}</td>
-                <td><button>Remover</button></td>
+                <td><button onClick={() => removeAutor(index)}>Remover</button></td>
             </tr>
 
         )
@@ -38,7 +38,7 @@ export default class Table extends Component {
 		return (
             <table>
                 <Thead />
-                <Tbody autores={this.props.autores} />
+                <Tbody autores={this.props.autores} removeAutor={this.props.removeAutor} />
             </table>
         );
 	}
