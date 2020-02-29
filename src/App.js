@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './App.css';
 import Table from './Table';
+import Form from './Formulario';
 
 class App extends Component {
 	state = {
@@ -34,11 +35,16 @@ class App extends Component {
     });
   }
 
+  escutadorDeSubmit = autor => {
+	  this.setState({ autores: [...this.state.autores, autor] });
+  }
+
 	render() {
 		return (
-			<div className="App">
+			<Fragment>
 				<Table autores={this.state.autores} removeAutor={this.removeAutor}/>
-			</div>
+				<Form escutadorDeSubmit={this.escutadorDeSubmit} />
+			</Fragment>
 		);
 	}
 }
