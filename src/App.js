@@ -3,6 +3,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import Table from './Table';
 import Form from './Formulario';
 import Header from './Header';
+import './App.css';
 
 class App extends Component {
 	state = {
@@ -44,8 +45,10 @@ class App extends Component {
 		return (
 			<Fragment>
 				<Header />
-				<Table autores={this.state.autores} removeAutor={this.removeAutor}/>
-				<Form escutadorDeSubmit={this.escutadorDeSubmit} />
+				<div className="container mb-10">
+					<Table autores={this.state.autores} removeAutor={this.removeAutor}/>
+					<Form escutadorDeSubmit={this.escutadorDeSubmit} />
+				</div>
 			</Fragment>
 		);
 	}

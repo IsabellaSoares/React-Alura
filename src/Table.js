@@ -20,7 +20,7 @@ const Tbody = ({ autores, removeAutor }) => {
                 <td>{linha.nome}</td>
                 <td>{linha.livro}</td>
                 <td>{linha.preco}</td>
-                <td><button onClick={() => removeAutor(index)}>Remover</button></td>
+                <td><button className="waves-effect waves-light btn indigo lighten-2" onClick={() => removeAutor(index)}>Remover</button></td>
             </tr>
 
         )
@@ -36,7 +36,7 @@ const Tbody = ({ autores, removeAutor }) => {
 export default class Table extends Component {
 	render() {
 		return (
-            <table>
+            <table className="centered highlight">
                 <Thead />
                 <Tbody autores={this.props.autores} removeAutor={this.props.removeAutor} />
             </table>
