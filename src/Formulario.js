@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.css';
 
 export default class Formulario extends Component {
 	constructor(props) {
@@ -30,7 +31,7 @@ export default class Formulario extends Component {
 		const { nome, livro, preco } = this.state;
 
 		return (
-			<form>
+			<form className="container centered">
 				<div className="row">
 					<div className="input-field col s4">
 						<label htmlFor="nome" className="input-field">Nome</label>
